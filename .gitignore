@@ -1,5 +1,5 @@
 # Quantum ESPRESSO Outputs & Scratch Files
-qe/
+si_qe/
 phonons/
 *.json
 *.out
