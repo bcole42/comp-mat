@@ -7,7 +7,7 @@ for inp in si_*.in; do
   out="${inp%.in}.out"
   if [ -f "$out" ] && grep -q "JOB DONE" "$out"; then echo "skip $inp"; continue; fi
   echo "run  $inp"
-  mpirun -np "$NP" pw.x -in "$inp" > "$out"
+  mpirun -np "$NP" --mca btl_tcp_if_include lo pw.x -in "$inp" > "$out"
 done
 cd ..
 echo "Done."
