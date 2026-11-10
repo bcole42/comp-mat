@@ -75,7 +75,7 @@ def main():
                 k += 1
                 name = f"si_{k:03d}"
                 e_mace, pos = traj[step]
-                write_pw_input(f"qe/{name}.in", name, cell, pos)
+                write_pw_input(f"si_qe/{name}.in", name, cell, pos)
                 manifest.append(dict(
                     name=name, vol_pct=vol, seed=seed, step=step, n_atoms=len(pos),
                     split="valid" if abs(vol - VALID_VOLUME_PCT) < 1e-9 else "train",
@@ -83,7 +83,7 @@ def main():
     with open("manifest.json", "w") as f:
         json.dump(manifest, f)
     ntr = sum(m["split"] == "train" for m in manifest)
-    print(f"\nWrote {len(manifest)} inputs to qe/  ({ntr} train, {len(manifest) - ntr} valid) "
+    print(f"\nWrote {len(manifest)} inputs to si_qe/  ({ntr} train, {len(manifest) - ntr} valid) "
           f"and manifest.json")
 
 if __name__ == "__main__":
