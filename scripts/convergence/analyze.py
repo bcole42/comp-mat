@@ -3,7 +3,7 @@
 Targets: max force change < ~1 meV/A, stress change ~< 1 kbar.
 """
 import numpy as np
-from search_common import *
+from conv_common import *
 
 
 def report(label, files, values):

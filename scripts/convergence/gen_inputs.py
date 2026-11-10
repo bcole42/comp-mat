@@ -5,7 +5,7 @@ Creates:
   conv_k/si64_k{N}.in       64-atom rattled cell, scan of k-mesh   (slower)
 """
 import os
-from search_common import *
+from conv_common import *
 
 os.makedirs("conv_ecut", exist_ok=True)
 os.makedirs("conv_k", exist_ok=True)
