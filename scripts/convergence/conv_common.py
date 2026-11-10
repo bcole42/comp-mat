@@ -19,16 +19,17 @@ K_FOR_ECUT_SCAN = 4                    # NxNxN on the 8-atom cell
 # Set ECUT_FOR_K_SCAN to the value you chose from the cutoff scan.
 ECUT_FOR_K_SCAN = 40                   # Ry
 K_LIST = [1, 2, 3, 4]                  # NxNxN on the 64-atom cell
-# ---------------------------------------------------------------------------
 
+# Conversions
 RY_BOHR_TO_EV_ANG = 13.605693123 / 0.529177210903   # Ry/bohr -> eV/Angstrom
 RY_TO_EV = 13.605693123
 
 
 def build_si(n=1, rattle=True):
-    """Diamond-cubic Si, n x n x n copies of the 8-atom cubic cell.
+    """
+    Builds 8-atom, Diamond-cubic Si cell with n^3 copies
 
-    Returns (cell 3x3 in Angstrom, Cartesian positions Nx3 in Angstrom).
+    Returns: 3x3 cell in Angstrom and Cartesian positions in Angstrom
     """
     fcc = np.array([[0, 0, 0], [0, .5, .5], [.5, 0, .5], [.5, .5, 0]])
     basis = np.vstack([fcc, fcc + 0.25])                 # 8 atoms, fractional (cubic cell)
