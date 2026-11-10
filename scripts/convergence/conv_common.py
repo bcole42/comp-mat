@@ -1,17 +1,13 @@
-"""Shared settings + helpers for the Si Quantum ESPRESSO convergence tests.
-
-Pure Python + numpy (no ASE needed). Edit the SETTINGS block, nothing else.
-"""
 import re
 import numpy as np
 
-# ----------------------------- SETTINGS ------------------------------------
+# Settings
 A_LATTICE = 5.469            # Angstrom, PBE lattice constant of diamond Si
-PSEUDO_FILE = "Si.us.pbesol.z_4.ld1.psl.v1.0.0-high.upf"   # VERIFY against the SSSP table
-PSEUDO_DIR = "../pseudo"     # relative to the folder the .in files live in
+PSEUDO_FILE = "Si.us.pbesol.z_4.ld1.psl.v1.0.0-high.upf"
+PSEUDO_DIR = "../pseudo"
 MASS_SI = 28.0855
-DUAL = 8                     # ecutrho = DUAL * ecutwfc (ultrasoft/PAW). Use 4 for norm-conserving
-CONV_THR = "1.0d-10"         # Ry, whole cell; tighten once to confirm forces don't change
+DUAL = 8                     # ecutrho = DUAL * ecutwfc (ultrasoft/PAW)
+CONV_THR = "1.0d-10"         # Ry, whole cell
 RATTLE_STD = 0.05            # Angstrom, per Cartesian component (~0.1 A displacement magnitude)
 SEED = 42                    # fixed seed so every group member gets the same structure
 
