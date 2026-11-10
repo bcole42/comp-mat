@@ -1,6 +1,8 @@
 # Quantum ESPRESSO Outputs & Scratch Files
 si_qe/
 phonons/
+conv_ecut/
+conv_k/
 *.json
 *.out
 *.wfc
