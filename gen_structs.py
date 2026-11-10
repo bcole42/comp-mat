@@ -61,7 +61,7 @@ def pick_snapshots(traj, fracs):
 
 
 def main():
-    os.makedirs("qe", exist_ok=True)
+    os.makedirs("si_qe", exist_ok=True)
     manifest, k = [], 0
     for iv, vol in enumerate(VOLUME_PCT):
         for ir in range(RATTLES_PER_VOLUME):
